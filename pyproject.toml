@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "redguard-ai"
+version = "0.0.1"
+description = "Precision visual inspection and physical component verification platform"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.0",
+    "opencv-python-headless>=4.10",
+    "pillow>=11.0",
+    "pydantic>=2.10",
+    "pydantic-settings>=2.7"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
