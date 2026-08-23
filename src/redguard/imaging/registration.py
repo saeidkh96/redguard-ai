@@ -11,6 +11,7 @@ from redguard.imaging.validation import validate_image
 class RegistrationResult:
     aligned_image: np.ndarray
     homography: np.ndarray
+    valid_mask: np.ndarray
     matches_total: int
     matches_used: int
     inliers: int
@@ -136,9 +137,36 @@ class ImageRegistrationEngine:
             flags=cv2.INTER_LINEAR,
         )
 
+        source_mask = np.full(
+            inspection_gray.shape,
+            255,
+            dtype=np.uint8,
+        )
+
+        valid_mask = cv2.warpPerspective(
+            source_mask,
+            homography,
+            (width, height),
+            flags=cv2.INTER_NEAREST,
+        )
+
+        _, valid_mask = cv2.threshold(
+            valid_mask,
+            254,
+            255,
+            cv2.THRESH_BINARY,
+        )
+
+        valid_mask = cv2.erode(
+            valid_mask,
+            np.ones((7, 7), dtype=np.uint8),
+            iterations=1,
+        )
+
         return RegistrationResult(
             aligned_image=aligned,
             homography=homography,
+            valid_mask=valid_mask,
             matches_total=len(raw_matches),
             matches_used=len(good_matches),
             inliers=inliers,

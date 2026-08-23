@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "redguard-ai"
-version = "0.0.3"
+version = "0.0.4"
 description = "Precision visual inspection and physical component verification platform"
 requires-python = ">=3.12"
 dependencies = [
@@ -12,7 +12,8 @@ dependencies = [
     "opencv-python-headless>=4.10",
     "pillow>=11.0",
     "pydantic>=2.10",
-    "pydantic-settings>=2.7"
+    "pydantic-settings>=2.7",
+    "scikit-image>=0.25"
 ]
 
 [project.optional-dependencies]

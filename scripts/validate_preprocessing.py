@@ -138,12 +138,12 @@ def main() -> int:
         print("[PASS] Illumination sensitivity reduced")
         print("[PASS] Preprocessing artifacts generated")
         print()
-        print("REDGUARD v0.0.2 PREPROCESSING: PASS")
+        print("REDGUARD PREPROCESSING: PASS")
         return 0
 
     print("[FAIL] Preprocessing did not reduce illumination sensitivity")
     print()
-    print("REDGUARD v0.0.2 PREPROCESSING: FAIL")
+    print("REDGUARD PREPROCESSING: FAIL")
     return 1
 
 
