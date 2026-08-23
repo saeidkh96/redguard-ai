@@ -14,3 +14,5 @@ data/inspection/*
 !data/raw/.gitkeep
 !data/reference/.gitkeep
 !data/inspection/.gitkeep
+
+*.egg-info/
