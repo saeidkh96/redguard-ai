@@ -38,10 +38,10 @@ def main() -> int:
     print()
 
     if all(results):
-        print("REDGUARD v0.0.1: PASS")
+        print(f"REDGUARD v{settings.version}: PASS")
         return 0
 
-    print("REDGUARD v0.0.1: FAIL")
+    print(f"REDGUARD v{settings.version}: FAIL")
     return 1
 
 
