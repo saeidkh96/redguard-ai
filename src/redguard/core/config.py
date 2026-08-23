@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     app_name: str = "RedGuard AI"
-    version: str = "0.2.0"
+    version: str = "0.3.0"
 
     data_dir: Path = Path("data")
     artifacts_dir: Path = Path("artifacts")
