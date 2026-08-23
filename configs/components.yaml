@@ -1,0 +1,11 @@
+path: data/detection
+
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: transistor
+  1: resistor
+  2: capacitor
+  3: integrated_circuit

@@ -1,4 +1,4 @@
-﻿# RedGuard AI
+# RedGuard AI
 
 **Precision Visual Inspection & Physical Component Verification**
 
@@ -12,7 +12,7 @@ RedGuard AI aligns reference and inspection images, suppresses camera and regist
 
 ## Current Version
 
-**v0.1.0 - Component-Level Verification**
+**v0.2.0 - Automatic Component Detection**
 
 ### Current Capabilities
 
@@ -151,7 +151,7 @@ The current confidence score is deterministic and based on spatial overlap. It i
 
 ## Test Status
 
-    35 passed
+    58 passed
 
 The test suite covers the current foundation, preprocessing, registration, change detection, component models, and component verification layers.
 
@@ -165,8 +165,8 @@ The test suite covers the current foundation, preprocessing, registration, chang
 | v0.0.2 | Image Preprocessing | Complete |
 | v0.0.3 | Image Registration | Complete |
 | v0.0.4 | Baseline Change Detection | Complete |
-| v0.1.0 | Component-Level Verification | Current |
-| v0.2.0 | Automatic Component Detection | Next |
+| v0.1.0 | Component-Level Verification | Complete |
+| v0.2.0 | Automatic Component Detection | Current |
 | v0.3.0 | Component Visual Fingerprinting | Planned |
 | v0.4.0 | Replacement / Identity Verification | Planned |
 | v0.5.0 | Anomaly Classification | Planned |
