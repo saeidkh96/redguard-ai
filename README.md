@@ -6,7 +6,7 @@ RedGuard AI is a computer vision and ML engineering project focused on detecting
 
 ## Current Release
 
-`v0.0.2` — Image Preprocessing
+`v0.0.3` — Image Registration
 
 ## Initial Scope
 
@@ -45,4 +45,4 @@ The project progresses from `v0.0.1` toward the first complete production-orient
 
 ## Status
 
-Test suite: 17 passed
+Test suite: 21 passed
