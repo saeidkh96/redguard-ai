@@ -40,6 +40,13 @@ RedGuard AI currently supports:
 - Texture-level difference analysis
 - Multi-signal inspection risk scoring
 - PASS / REVIEW / FAIL inspection decisions
+- Multi-reference verification and reference consensus
+- Explainable inspection intelligence and evidence fusion
+- Safe vision reasoning over deterministic inspection results
+- Persistent inspection history and structured report artifacts
+- FastAPI health/readiness and inspection API
+- End-to-end production inspection orchestration
+- Dockerized deployment and CI/release validation
 
 ---
 
@@ -416,7 +423,7 @@ Responsible for:
 Current automated test suite:
 
 ```text
-118 passed
+117 passed
 ```
 
 Major validated flows include:
@@ -451,7 +458,7 @@ Major validated flows include:
 | Altered anomaly score | 0.9450 |
 | Normal inspection | PASS |
 | Altered inspection | FAIL |
-| Automated tests | 118 passed |
+| Automated tests | 117 passed |
 
 > Detection metrics currently come from the synthetic RedGuard dataset. Fingerprint, anomaly, and fine-grained inspection results come from controlled experimental validation scenarios. These numbers are development validation results, not production benchmarks.
 
@@ -472,45 +479,53 @@ Major validated flows include:
 | v0.5.0 | Fine-Grained Inspection | Complete |
 | v0.6.0 | Multi-Reference Verification | Complete |
 | v0.7.0 | Inspection Intelligence | Complete |
-| v0.8.0 | Vision AI Reasoning | **Current** |
-| v0.9.0 | Production Inspection System | Planned |
-| v0.10.0 | Production Validation | Planned |
-| v1.0.0 | RedGuard AI | Planned |
+| v0.8.0 | Vision AI Reasoning | Complete |
+| v0.9.0 | Production Inspection System | Complete |
+| v0.10.0 | End-to-End Production Pipeline | Complete |
+| v1.0.0 | Production Release | **Current** |
 
 ---
 
-## Next Milestone
+## Release Status
 
-### v0.6.0 — Multi-Reference Verification
+### v1.0.0 — Production Release
 
-The next milestone will move RedGuard from single-reference comparison toward reference-set-based inspection.
+RedGuard AI v1.0.0 closes the first complete engineering milestone of the project. The release connects the visual inspection stack into a deployable end-to-end system with deterministic inspection decisions, safe reasoning, persistence, artifacts, API readiness, Docker packaging, CI, and release validation.
 
-Planned capabilities include:
-
-- Multiple normal references per component
-- Reference feature banks
-- Best-reference matching
-- Reference consensus
-- Robustness to illumination variation
-- Robustness to small viewpoint variation
-- Reference-set fingerprint comparison
-- Reference-set anomaly baselines
-- Confidence-aware verification
-
-Instead of asking:
+Validated release flow:
 
 ```text
-Does inspection image B match reference image A?
+Reference + Inspection Images
+        |
+        v
+Preprocessing / Registration
+        |
+        v
+Change + Component Detection
+        |
+        v
+Component Registry
+        |
+        v
+Fingerprint / Anomaly / Fine-Grained Inspection
+        |
+        v
+Multi-Reference Verification
+        |
+        v
+Inspection Intelligence
+        |
+        v
+Safe Vision Reasoning
+        |
+        v
+Persistence + Report Artifacts
+        |
+        v
+Production API
 ```
 
-RedGuard will move toward:
-
-```text
-Is this inspection consistent with the known-normal
-visual state of this physical component?
-```
-
-This is intended to make verification less dependent on one perfect reference image.
+The v1.0.0 release was validated with the automated test suite, end-to-end pipeline validation, wheel packaging checks, API health/readiness checks, and a Docker runtime smoke test.
 
 ---
 
@@ -584,7 +599,13 @@ Anomaly Detection
        +
 Fine-Grained Inspection
        +
+Multi-Reference Verification
+       +
 Inspection Intelligence
+       +
+Safe Vision Reasoning
+       +
+Production Orchestration
 ```
 
 The long-term goal is to detect physical changes that may not be visible from software state, identifiers, component metadata, or part numbers alone.
@@ -617,6 +638,10 @@ Current RedGuard AI development includes:
 - Pydantic
 - PyYAML
 - pytest
+- FastAPI
+- Uvicorn
+- Docker / Docker Compose
+- GitHub Actions
 
 ---
 
@@ -634,7 +659,7 @@ The project does **not** currently claim:
 - Industrial threshold calibration
 - Certified quality-control performance
 
-Real-world datasets, robustness evaluation, threshold calibration, deployment testing, and production validation remain future milestones.
+The v1.0.0 software release has completed packaging, API, end-to-end, and Docker deployment validation. Real-world industrial datasets, broader robustness evaluation, threshold calibration, and production-grade accuracy validation remain future work.
 
 ---
 
