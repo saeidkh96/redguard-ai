@@ -416,7 +416,7 @@ Responsible for:
 Current automated test suite:
 
 ```text
-68 passed
+79 passed
 ```
 
 Major validated flows include:
@@ -451,7 +451,7 @@ Major validated flows include:
 | Altered anomaly score | 0.9450 |
 | Normal inspection | PASS |
 | Altered inspection | FAIL |
-| Automated tests | 68 passed |
+| Automated tests | 79 passed |
 
 > Detection metrics currently come from the synthetic RedGuard dataset. Fingerprint, anomaly, and fine-grained inspection results come from controlled experimental validation scenarios. These numbers are development validation results, not production benchmarks.
 
@@ -469,8 +469,8 @@ Major validated flows include:
 | v0.2.0 | Automatic Component Detection | Complete |
 | v0.3.0 | Component Visual Fingerprinting | Complete |
 | v0.4.0 | Patch-Memory Anomaly Detection | Complete |
-| v0.5.0 | Fine-Grained Inspection | **Current** |
-| v0.6.0 | Multi-Reference Verification | Planned |
+| v0.5.0 | Fine-Grained Inspection | Complete |
+| v0.6.0 | Multi-Reference Verification | **Current** |
 | v0.7.0 | Inspection Intelligence | Planned |
 | v0.8.0 | Vision AI Reasoning | Planned |
 | v0.9.0 | Production Inspection System | Planned |
