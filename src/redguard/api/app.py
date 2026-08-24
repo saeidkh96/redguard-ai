@@ -15,6 +15,20 @@ def create_app(service: InspectionService | None = None) -> FastAPI:
     def health() -> dict[str, str]:
         return {"status": "ok", "version": settings.version}
 
+    @app.get("/ready")
+    def ready() -> dict[str, object]:
+        return {
+            "status": "ready",
+            "version": settings.version,
+            "capabilities": [
+                "inspection-service",
+                "persistence",
+                "artifact-storage",
+                "safe-reasoning",
+                "end-to-end-orchestration",
+            ],
+        }
+
     @app.post("/api/v1/inspections", response_model=InspectionResponse, status_code=201)
     def create_inspection(request: InspectionRequest) -> dict:
         return inspection_service.inspect(**request.model_dump()).to_dict()
