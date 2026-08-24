@@ -14,7 +14,7 @@ RedGuard AI combines image registration, visual change detection, automatic comp
 
 ## Current Version
 
-**v0.5.0 — Fine-Grained Component Inspection**
+**v1.0.0 — Production Release**
 
 ---
 
@@ -416,7 +416,7 @@ Responsible for:
 Current automated test suite:
 
 ```text
-96 passed
+118 passed
 ```
 
 Major validated flows include:
@@ -451,7 +451,7 @@ Major validated flows include:
 | Altered anomaly score | 0.9450 |
 | Normal inspection | PASS |
 | Altered inspection | FAIL |
-| Automated tests | 96 passed |
+| Automated tests | 118 passed |
 
 > Detection metrics currently come from the synthetic RedGuard dataset. Fingerprint, anomaly, and fine-grained inspection results come from controlled experimental validation scenarios. These numbers are development validation results, not production benchmarks.
 

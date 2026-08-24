@@ -4,10 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "redguard-ai"
-version = "0.10.0"
+version = "1.0.0"
 description = "Precision visual inspection and physical component verification platform"
 requires-python = ">=3.12"
 dependencies = [
+    "torch>=2.10",
+    "torchvision>=0.25",
+    "ultralytics-opencv-headless>=8.4",
     "uvicorn>=0.35",
     "httpx>=0.28",
     "fastapi>=0.116",

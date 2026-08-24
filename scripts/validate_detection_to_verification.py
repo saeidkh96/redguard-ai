@@ -20,13 +20,7 @@ from redguard.inspection.component_verifier import (
 )
 
 
-MODEL_PATH = Path(
-    "runs/detect/artifacts/"
-    "detection_training/"
-    "v020_baseline/"
-    "weights/"
-    "best.pt"
-)
+MODEL_PATH = Path("models/redguard-yolo-synthetic.pt")
 
 CONFIG_PATH = Path(
     "configs/components.yaml"

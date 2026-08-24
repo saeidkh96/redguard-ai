@@ -1,4 +1,6 @@
-from fastapi.testclient import TestClient
+import asyncio
+
+import httpx
 
 from redguard.api.app import create_app
 from redguard.persistence import InspectionRepository
@@ -10,9 +12,19 @@ def test_readiness_endpoint_reports_orchestration(tmp_path):
         InspectionRepository(tmp_path / "history.json"),
         ArtifactService(tmp_path / "artifacts"),
     )
-    client = TestClient(create_app(service))
-    response = client.get("/ready")
-    assert response.status_code == 200
-    body = response.json()
-    assert body["status"] == "ready"
-    assert "end-to-end-orchestration" in body["capabilities"]
+    app = create_app(service)
+
+    async def scenario():
+        transport = httpx.ASGITransport(app=app)
+        async with httpx.AsyncClient(
+            transport=transport,
+            base_url="http://testserver",
+        ) as client:
+            response = await client.get("/ready")
+
+        assert response.status_code == 200
+        body = response.json()
+        assert body["status"] == "ready"
+        assert "end-to-end-orchestration" in body["capabilities"]
+
+    asyncio.run(scenario())

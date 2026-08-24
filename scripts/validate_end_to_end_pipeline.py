@@ -129,10 +129,10 @@ def main() -> int:
 
     print()
     if failed:
-        print("REDGUARD v0.10.0 END-TO-END PIPELINE: FAIL")
+        print("REDGUARD v1.0.0 END-TO-END PIPELINE: FAIL")
         return 1
 
-    print("REDGUARD v0.10.0 END-TO-END PIPELINE: PASS")
+    print("REDGUARD v1.0.0 END-TO-END PIPELINE: PASS")
     return 0
 
 

@@ -1,0 +1,15 @@
+services:
+  redguard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: redguard-ai:1.0.0
+    ports:
+      - "8001:8000"
+    volumes:
+      - redguard-data:/app/data
+      - redguard-artifacts:/app/artifacts
+
+volumes:
+  redguard-data:
+  redguard-artifacts:
